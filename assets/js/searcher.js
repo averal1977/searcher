@@ -100,5 +100,10 @@ let loadProductsEspecif = (textSearch) => {
 let botonCargar = document.getElementById("filter");
 botonCargar.addEventListener('click', (event) => {
     let textSearch = document.getElementById("text").value;
-    loadProductsEspecif(textSearch);    
+    if (textSearch.trim().length === 0) {
+        alert("Debe ingresar el texto a buscar...");
+    }
+    else {
+        loadProductsEspecif(textSearch.trim());    
+    } 
 });
