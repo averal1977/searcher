@@ -63,8 +63,8 @@ let loadProductsEspecif = (textSearch) => {
     fetch("https://raw.githubusercontent.com/Bootcamp-Espol/Datos/main/products.json")
     .then(response => response.json())
     .then(productsJson => {
-        let searchProduct= productsJson.filter( e => e.name.includes(textSearch) || e.type.includes(textSearch));
-        console.log (searchProduct);
+        let searchProduct= productsJson.filter(element => element.name.includes(textSearch) || element.type.includes(textSearch));
+        //console.log (searchProduct);
 
         searchProduct.forEach ((object) => {
             let {src, name, type, price} = object;
