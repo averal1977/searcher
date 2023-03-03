@@ -25,7 +25,7 @@ let plantilla = (src, name, type, price) => `
 //Cargar todos los productos
 let loadProducts = () => {
     document.getElementById("salida").innerHTML = ``;
-    fetch("https://raw.githubusercontent.com/Bootcamp-Espol/FSD02/main/S03D03/clase/recursos/products.json")
+    fetch("https://raw.githubusercontent.com/Bootcamp-Espol/Datos/main/products.json")
     .then(response => response.json())
     .then(productsJson => {
         productsJson.forEach(productJson => {
@@ -34,7 +34,7 @@ let loadProducts = () => {
         });
     })
 
-    fetch("https://raw.githubusercontent.com/Bootcamp-Espol/FSD02/main/S03D03/clase/recursos/products.xml")
+    fetch("https://raw.githubusercontent.com/Bootcamp-Espol/Datos/main/products.xml")
     .then(response => response.text())
     .then(productsXml => {
         let prodXml = (new DOMParser()).parseFromString(productsXml, 'application/xml');
@@ -60,7 +60,7 @@ let loadProductsEspecif = (textSearch) => {
     //console.log(textSearch)
     document.getElementById("salida").innerHTML = ``;
     
-    fetch("https://raw.githubusercontent.com/Bootcamp-Espol/FSD02/main/S03D03/clase/recursos/products.json")
+    fetch("https://raw.githubusercontent.com/Bootcamp-Espol/Datos/main/products.json")
     .then(response => response.json())
     .then(productsJson => {
         let searchProduct= productsJson.filter( e => e.name.includes(textSearch) || e.type.includes(textSearch));
@@ -73,7 +73,7 @@ let loadProductsEspecif = (textSearch) => {
                  
     })  
     
-    fetch("https://raw.githubusercontent.com/Bootcamp-Espol/FSD02/main/S03D03/clase/recursos/products.xml")
+    fetch("https://raw.githubusercontent.com/Bootcamp-Espol/Datos/main/products.xml")
     .then(response => response.text())
     .then(productsXml => {
         let prodXml = (new DOMParser()).parseFromString(productsXml, 'application/xml');
